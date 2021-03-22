@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>deep lizard predict image app</title>
+      <style>
+        *{
+          font-size:30px;
+        }
+      </style>
+</head>
+<body>
+
+    <input id="image-selector" type="file">
+
+    <!-- to upload a file -->
+
+    <button id="predict-button">Predict</button>
+
+    <p style="font-weight:bold">Predictions</p>
+
+    <p>Dog:<span id="dog-prediction"></span></p>
+    <p>Cat:<span id="cat-prediction"></span></p>
+
+    <img id="selected-image" src="" />
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+      let base64Image;
+      // when user selects a file
+      $("#image-selector").change(function(){
+        let reader = new FileReader()
+        // onload triggered whrn filereader successfully reads the contents of the file
+        reader.onload=function(e){
+          let dataURL = reader.result;
+          // has the url of the image as a b64 encoded string
+          $('#selected image').attr("src",dataURL);
+          base64Image=dataURL.replace("data:image/png;base64,","")
+          // this replace ony leaves the encoded part here
+          console.log(base64Image);
+        }
+        reader.readAsDataURL($("#image-selector")[0].files[0]);
+        // actually load the selected image reads the content of file
+        $("dog-prediction").text("");
+        $("cat-prediction").text("");
+        // clears the previous text on screen
+      });
+
+
+
+      $("#predict-button").click(function(event){
+        let message ={
+          image: base64Image
+        }
+        console.log(message);
+
+        $.post("http://0.0.0.0:5000/predict",JSON.stringify(message),function(response){
+
+          $("#dog-prediction").text(response.prediction.dog.toFixed(6));
+          $("#cat-prediction").text(response.prediction.cat.toFixed(6));
+          // to fixed rounds of to 6 decimal places
+           console.log(response);
+      });
+    });
+
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<!-- head is where we store metadata of the web[age and the body is where we specify the structure and elements on the page -->
+
+   <title> deeplizard greeting app </title>
+   <!-- of the wbpage eshown on tab -->
+   <style>
+   *{
+     /*  means all the font of 30 pixels */
+     background-color: crimson;
+     
+      font-size:30px;
+
+    }
+
+</style>
+</head>
+<body>
+
+       <input id="name-input" type="text" />
+
+       <button id="name-button"> Submit Name </button>
+
+       <p id="greeting"></p>
+       <!-- area of the displayed message after submission  -->
+
+      <!-- /* script tags to deal woht what page actually does> javascript  */ -->
+       <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+       <!-- script tag a content delivery tag which is a web server for importing jquery from, jquery works to simplify js code  -->
+       <!-- what to so when webpg erecieves some text -->
+
+       <script>
+       // element with the id name button
+         $("#name-button").click(function(event){
+
+         let message = {
+
+           // key value pairs to create a js object we place all our key value pl
+    // js object created message and it ocntains all key value pairs
+           name: $("#name-input").val()
+           // name has id nameinput
+           // val returns value from text box presumanbly users nameinput
+         }
+         // jquer object and posts data using http post reequest
+         // specifies where we nee dto senf the data
+         //stingify formats th object to json
+         $.post("http://0.0.0.0:5000/hello",JSON.stringify(message),function(response){
+
+           $("#greeting").text(response.greeting);
+           // we get the element greeting and we call the text fn on it setting the text in the para
+           //key was greeting and value was hey + name
+           console.log(response);
+
+         });
+       });
+       // closing fns that handles the reaponse and close the fn that handles the click event
+</script>
+
+</body>
+
+</html>
