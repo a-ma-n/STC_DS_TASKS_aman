@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+        crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed|Roboto+Slab" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Abhya</title>
+</head>
+
+<body>
+
+  <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-firestore.js"></script>
+
+    <div id="slideout-menu">
+        <ul>
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+            <li>
+                <a href="overview.html">Overview</a>
+            </li>
+            <li>
+                <a href="userguide.html">User Guide</a>
+            </li>
+            <li>
+                <input type="text" placeholder="Search Here">
+            </li>
+        </ul>
+    </div>
+
+    <nav>
+        <div id="logo-img">
+            <a href="#">
+                <img src="img/logo.png" alt="Abhya Logo">
+            </a>
+        </div>
+        <div id="menu-icon">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul>
+            <li>
+                <a class="active" href="index.html">Home</a>
+            </li>
+            <li>
+                <a href="overview.html">Overview</a>
+            </li>
+            <li>
+                <a href="userguide.html">User Guide</a>
+            </li>
+
+        </ul>
+    </nav>
+
+
+
+    <main>
+
+            <h2 class="section-heading"></h2>
+
+<br> <br>
+        <section>
+            <div class="card">
+                <div class="card-image">
+                    <a href="cam1.html">
+                        <video width="480"  controls>
+                            <source src="img/hdfight.mp4" type="video/mp4">
+                        </video>
+                    </a>
+                </div>
+
+                <div class="card-description">
+
+                    <a href="cam1.html" class="btn-readmore">Investigate</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-image">
+                    <a href="cam2.html">
+                        <video width="480"  controls>
+                            <source src="img/hdfight.mp4" type="video/mp4">
+                        </video>
+                    </a>
+                </div>
+
+                <div class="card-description">
+
+                    <a href="cam2.html" class="btn-readmore">Investigate</a>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section>
+            <div class="card">
+                <div class="card-image">
+                    <a href="cam3.html">
+                        <video width="480"  controls>
+                            <source src="img/hdfight.mp4" type="video/mp4">
+                        </video>
+                    </a>
+                </div>
+
+                <div class="card-description">
+
+                    <a href="cam3.html" class="btn-readmore">Investigate</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-image">
+                    <a href="cam4.html">
+                        <video width="480"  controls>
+                            <source src="img/hdfight.mp4" type="video/mp4">
+                        </video>
+                    </a>
+                </div>
+
+                <div class="card-description">
+
+                    <a href="cam4.html" class="btn-readmore">Investigate</a>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div id="left-footer">
+                <h3>Developed With ❤️ By :-</h3>
+                <p>
+                    <ul>
+                        <li>
+                            <a href="https://www.linkedin.com/in/-aman/"><img src="img/linkedin-logo.png" width="25vh" height="25vh" class="aman"></a>Aman Ali Siddiqui
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/hrithikpurwar/"><img src="img/linkedin-logo.png" width="25vh" height="25vh" class="aman"></a>Hrithik Purwar
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/samikshya-sarangi-435854202/"><img src="img/linkedin-logo.png" width="25vh" height="25vh" class="aman"></a>Samikshya Sarangi
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/suhani-bajaj-654243200/"><img src="img/linkedin-logo.png" width="25vh" height="25vh" class="aman"></a>Suhani Bajaj
+                        </li>
+
+
+
+                    </ul>
+                </p>
+            </div>
+
+            <div id="right-footer">
+                <h3>Follow us on</h3>
+                <div id="social-media-footer">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/a-ma-n/Abhya">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <p>“Women’s freedom is the sign of social freedom.”       -Rosa Luxemburg</p>
+            </div>
+        </footer>
+
+    </main>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyDrMfqBopzOKAg1hcTffx7cbr9roBZ833o",
+        authDomain: "abhya-6aa83.firebaseapp.com",
+        databaseURL: "https://abhya-6aa83-default-rtdb.firebaseio.com",
+        projectId: "abhya-6aa83",
+        storageBucket: "abhya-6aa83.appspot.com",
+        messagingSenderId: "727223682675",
+        appId: "1:727223682675:web:d041737148845217794c06"
+      };
+
+      // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const db=firebase.firestore();
+    db.settings({timestampInSnapshot: true})
+
+</script>
+   <script src="app.js"></script>
+
+    
+
+</body>
+
+</html>
